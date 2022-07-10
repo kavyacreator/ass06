@@ -1,0 +1,20 @@
+import math
+n=10000001
+seive=[]
+for i in range(n):
+    seive.append(True)
+seive[0]=seive[1]=False
+x=int(math.sqrt(n))
+for j in range(2,x+1):
+    if seive[j]:
+        for k in range(j*j,n,j):
+            seive[k]=False
+
+a=int(input('enter number:'))
+c=0
+for i in range(a):
+    if seive[i]:
+        c=c+1
+print(c)        
+    
+
